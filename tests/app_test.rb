@@ -12,7 +12,7 @@ class MainAppTest < Minitest::Test
     Sinatra::Application
   end
 
-  def test_it_says_hello_world
+  def test_api_root
     get '/'
     assert last_response.ok?
     assert_equal 'Welcome to my API!', last_response.body
