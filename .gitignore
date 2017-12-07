@@ -1,0 +1,6 @@
+# Data folder contents
+data/*.db
+
+# Mac files
+.DS_Store
+
