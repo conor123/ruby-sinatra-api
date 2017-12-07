@@ -1,7 +1,7 @@
 class Review
-	include DataMapper::Resource
+    include DataMapper::Resource
 
-	property :id, Serial
+    property :id, Serial
     property :name, String
     property :text, String
     property :created_at, DateTime
@@ -9,4 +9,4 @@ class Review
 
     validates_presence_of :name
     validates_presence_of :text
-end	
+end 

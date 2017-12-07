@@ -20,10 +20,10 @@ end
 post '/review' do
     review = Review.new params[:review]
     if review.save
-    	status 201
+        status 201
     else
-    	status 500
-    	json review.errors.full_messages
+        status 500
+        json review.errors.full_messages
     end
 end
 
@@ -44,25 +44,25 @@ end
 # PUT
 
 put '/review/:id' do 
-	review = Review.get params[:id]
-	if review.update params[:review]
-		status 200
-		json "Review Entered/Updated"
-	else
-		status 500
-		json review.errors.full_messages
-	end
+    review = Review.get params[:id]
+    if review.update params[:review]
+        status 200
+        json "Review Entered/Updated"
+    else
+        status 500
+        json review.errors.full_messages
+    end
 end
 # DELETE
 delete '/review/:id' do 
-	review = Review.get params[:id]
-	if review.destroy 
-		status 200
-		json "Review Deleted"
-	else
-		status 500
-		json review.errors.full_messages
-	end
+    review = Review.get params[:id]
+    if review.destroy 
+        status 200
+        json "Review Deleted"
+    else
+        status 500
+        json review.errors.full_messages
+    end
 end
 
 
