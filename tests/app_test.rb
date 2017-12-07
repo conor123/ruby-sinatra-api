@@ -18,6 +18,19 @@ class MainAppTest < Minitest::Test
     assert_equal 'Welcome to my API!', last_response.body
   end
 
+  def test_get_reviews
+    get 'reviews'
+    assert_equal 200, last_response.status
+  end
+
+  def test_post_review
+    post 'review', review: {
+      name: "Joe",
+      text: "Hello"
+    }
+    assert_equal 201, last_response.status
+  end
+
   # def test_it_says_hello_to_a_person
   #   get '/', :name => 'Simon'
   #   assert last_response.body.include?('Simon')
