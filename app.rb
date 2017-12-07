@@ -16,7 +16,7 @@ DataMapper.finalize
 DataMapper.auto_migrate!
 
 get '/' do
-  'Welcome to Sinatra!'
+  'Welcome to my API!'
 end
 
 get '/reviews' do
