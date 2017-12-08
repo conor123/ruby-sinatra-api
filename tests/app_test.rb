@@ -41,6 +41,25 @@ class MainAppTest < Minitest::Test
     assert_includes last_response.content_type, 'application/json'
     assert_includes last_response.body, 'Joe'
 
+    # assert last_response.ok?
+    # response = JSON.parse(last_response.body)
+    # assert_equal 5, response.count
+
+  end
+
+  # PUT /review/:id
+  def test_put_review
+    put '/review/1', review: {
+      name: "Jim",
+      text: "Hello"
+    }
+    assert_equal 200, last_response.status
+  end
+
+  # DELETE /review/:id
+  def test_delete_review
+    delete '/review/1'
+    assert_equal 200, last_response.status
   end
   
 
